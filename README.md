@@ -1,9 +1,15 @@
 # x11-ttf-fonts
 
+[![license](https://img.shields.io/badge/license-MIT-lightgray.svg)](https://opensource.org/license/MIT)
+[![Release](https://img.shields.io/github/v/release/mittelmark/x11-ttf-fonts.svg?label=current+release)](https://github.com/mittelmark/x11-ttf-fonts/releases)
+![Downloads](https://img.shields.io/github/downloads/mittelmark/x11-ttf-fonts/total)
+![Commits](https://img.shields.io/github/commits-since/mittelmark/x11-ttf-fonts/latest)
+
 ## NAME
 
 __x11-ttf-fonts-install__ - indexes a set of exiting monospaced fonts into ~/.local/share/fonts  
 __x11-ttf-fonts-ubuntu__  - downloads and indexes the Ubuntu Mono fonts into ~/.local/share/fonts  
+
 
 ## SYNOPSIS
 
