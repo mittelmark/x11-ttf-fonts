@@ -21,12 +21,12 @@ __x11-ttf-fonts-ubuntu__  - downloads and indexes the Ubuntu Mono fonts into ~/.
 Platform Linux with X11 or Cygwin Windows with X11:
 
 ```
-curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-install | sh
-curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-anonymous-pro | sh
-curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-courier-prime | sh
-curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-dejavu-sans-mono | sh
-curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-source-code-pro | sh
-curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-ubuntu | sh 
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-install | bash
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-anonymous-pro | bash
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-courier-prime | bash
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-dejavu-sans-mono | bash
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-source-code-pro | bash
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-ubuntu | bash 
 ```
 
 ## DESCRIPTION
