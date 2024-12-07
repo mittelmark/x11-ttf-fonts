@@ -90,7 +90,7 @@ font path.
 One possibility which should work on all window managers or desktops is adding
 the following line to your `.bashrc`:
 
-```
+```bash
 ### end of .bashrc
 alias mfontsel="xfontsel -pattern '*-r-*-m-*' -scaled"
 if [ "$DISPLAY" != "" ]; then
