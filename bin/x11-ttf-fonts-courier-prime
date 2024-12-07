@@ -29,19 +29,19 @@ function check_font_path {
     echo "The Fontpath is updated!"
 }
 
-function ubuntu_mono {
-    URL="https://github.com/braver/programmingfonts/raw/gh-pages/fonts/resources/ubuntu"
+function courier_prime {
+    URL="https://github.com/quoteunquoteapps/CourierPrime/raw/master/fonts/ttf"
     FPATH=~/.local/share/fonts
-    if [ ! -f "$FPATH/ubuntu-mono-medium.ttf" ]; then
-        echo -n "downloading ubuntu-mono ..."
-        curl -fsSL $URL/ubuntu-bold.ttf --output-dir $FPATH -o ubuntu-mono-bold.ttf
-        curl -fsSL $URL/ubuntu.ttf  --output-dir $FPATH -o ubuntu-mono-medium.ttf    
-        curl -fsSL $URL/license.txt --output-dir $FPATH -o ubuntu-license.txt
+    if [ ! -f "$FPATH/courier-prime-medium.ttf" ]; then
+        echo -n "downloading courier-prime ..."
+        curl -fsSL $URL/CourierPrime-Bold.ttf --output-dir $FPATH -o courier-prime-bold.ttf
+        curl -fsSL $URL/CourierPrime-Regular.ttf --output-dir $FPATH -o courier-prime-medium.ttf    
+        curl -fsSL https://github.com/quoteunquoteapps/CourierPrime/blob/master/OFL.txt --output-dir $FPATH -o courier-prime-license.txt
         echo "done!"
-        echo "Run:\n\n  xfontsel -pattern '*-r-*-m-*' -scaled\n\nto check your available fonts"
+        echo -e "Run:\n\n  xfontsel -pattern '*-r-*-m-*' -scaled\n\nto check your available fonts"
     fi
 }
 check_apps
 check_path
-ubuntu_mono
+courier_prime
 check_font_path

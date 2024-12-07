@@ -29,19 +29,19 @@ function check_font_path {
     echo "The Fontpath is updated!"
 }
 
-function ubuntu_mono {
-    URL="https://github.com/braver/programmingfonts/raw/gh-pages/fonts/resources/ubuntu"
+function anonymous_pro {
+    URL="https://github.com/braver/programmingfonts/raw/gh-pages/fonts/resources/anonymous-pro"
     FPATH=~/.local/share/fonts
-    if [ ! -f "$FPATH/ubuntu-mono-medium.ttf" ]; then
-        echo -n "downloading ubuntu-mono ..."
-        curl -fsSL $URL/ubuntu-bold.ttf --output-dir $FPATH -o ubuntu-mono-bold.ttf
-        curl -fsSL $URL/ubuntu.ttf  --output-dir $FPATH -o ubuntu-mono-medium.ttf    
-        curl -fsSL $URL/license.txt --output-dir $FPATH -o ubuntu-license.txt
+    if [ ! -f "$FPATH/anonymous-pro-medium.ttf" ]; then
+        echo -n "downloading anonymous-pro ..."
+        curl -fsSL $URL/anonymous-pro-bold.ttf --output-dir $FPATH -o anonymous-pro-bold.ttf
+        curl -fsSL $URL/anonymous-pro.ttf --output-dir $FPATH -o anonymous-pro-medium.ttf    
+        curl -fsSL $URL/license.txt --output-dir $FPATH -o anonymous-pro-license.txt
         echo "done!"
-        echo "Run:\n\n  xfontsel -pattern '*-r-*-m-*' -scaled\n\nto check your available fonts"
+        echo "Run:  xfontsel -pattern '*-r-*-m-*' -scaled\nto check your available fonts"
     fi
 }
 check_apps
 check_path
-ubuntu_mono
+anonymous_pro
 check_font_path
