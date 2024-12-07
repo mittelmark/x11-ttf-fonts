@@ -59,17 +59,22 @@ version of the install script, into a running Bash session:
 
 
 ```bash
+### create the font if neccessary
 if [ ! -d ~/.local/share/fonts ] ; then
     echo "creating directory ~/.local/share/fonts"
     mkdir -p ~/.local/share/fonts
 fi
 
+### link existing ttf finds into the user folder
 find  /usr/ -iregex \
    ".*\\(Mono\\|Mono-?Bold\\|Mono-?Regular\\|Code-Regular\\|Code-Bold\\).ttf" 2>/dev/null \
 | xargs ln -sf -t ~/.local/share/fonts/
 
+### index the font directory
 mkfontscale ~/.local/share/fonts/
 mkfontdir ~/.local/share/fonts/
+
+### check the fontpath and update it if required
 res=$(xset q | grep -A 1 fontpath | grep .local/share/fonts)
 if [[ "$res" == "" ]]; then
     xset +fp ~/.local/share/fonts/
