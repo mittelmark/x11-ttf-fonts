@@ -44,15 +44,45 @@ machine are linked into `~/.local/share/fonts` using the `x11-ttf-fonts-install`
 can be as well installed if the package manager does not support installing them using their own little shell scripts
 as can be seen in the SYNOPSIS section.
 
-## Requirements
+## REQUIREMENTS
 
 - Linux OS with X11 or XWayland
 - MacOS with XQuartz (untested)
 - Windows with Cygwin-X11 (untested)
 - mkfontscale for font indexing
 
-## Links
+## LOCAL INSTALL
 
+If you  just  like to link and  index  your  local  True  Type  fonts  without
+executing  code  from  the web,  just  copy the code  below,  which is a short
+version of the install script, into a running Bash session:
+
+
+```bash
+if [ ! -d ~/.local/share/fonts ] ; then
+    echo "creating directory ~/.local/share/fonts"
+    mkdir -p ~/.local/share/fonts
+fi
+
+find  /usr/ -iregex \
+   ".*\\(Mono\\|Mono-?Bold\\|Mono-?Regular\\|Code-Regular\\|Code-Bold\\).ttf" 2>/dev/null \
+| xargs ln -sf -t ~/.local/share/fonts/
+
+mkfontscale ~/.local/share/fonts/
+mkfontdir ~/.local/share/fonts/
+res=$(xset q | grep -A 1 fontpath | grep .local/share/fonts)
+if [[ "$res" == "" ]]; then
+    xset +fp ~/.local/share/fonts/
+fi
+xset fp rehash
+```
+
+The updated font path  settings  using the `xset` command at the end should be
+made permanent, how depends on your desktop and Window manager.
+
+## LINKS
+
+- [FreeBSD handbook on X11 fonts](https://docs.freebsd.org/en/books/handbook/x11/#x-fonts)
 - [https://github.com/ProgrammingFonts/ProgrammingFonts](https://github.com/ProgrammingFonts/ProgrammingFonts)
 - [https://github.com/braver/programmingfonts](https://github.com/braver/programmingfonts)
 - [https://www.programmingfonts.org/ - Preview](https://www.programmingfonts.org/)
