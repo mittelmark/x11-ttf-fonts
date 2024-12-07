@@ -83,7 +83,9 @@ xset fp rehash
 ```
 
 The updated font path  settings  using the `xset` command at the end should be
-made permanent, how depends on your desktop and Window manager.
+made  permanent,  how  depends on your  desktop  and Window  manager,  on some
+systems  the folder  `~/.config/local/fonts`  is  automatically  added to your
+font path.
 
 ## LINKS
 
