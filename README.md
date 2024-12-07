@@ -87,6 +87,20 @@ made  permanent,  how  depends on your  desktop  and Window  manager,  on some
 systems  the folder  `~/.config/local/fonts`  is  automatically  added to your
 font path.
 
+One possibility which should work on all window managers or desktops is adding
+the following line to your `.bashrc`:
+
+```
+### end of .bashrc
+alias mfontsel="xfontsel -pattern '*-r-*-m-*' -scaled"
+if [ "$DISPLAY" != "" ]; then
+   if [ "`xset q | grep .local/share/fonts`" == "" ]; then 
+     xset +fp ~/.local/share/fonts
+     set fp rehash
+   fi
+fi   
+```
+
 ## LINKS
 
 - [FreeBSD handbook on X11 fonts](https://docs.freebsd.org/en/books/handbook/x11/#x-fonts)
