@@ -1,0 +1,47 @@
+#!/bin/sh
+
+function check_apps {
+    if [ -z "`which mkfontscale 2> /dev/null`" ]; then
+        echo "Error: program mkfontscale does not exists! Please install!"
+        exit
+    fi
+
+    if [ -z "`which xset 2> /dev/null`" ]; then
+        echo "Error: program xset does not exists! Please install!"
+        exit
+    fi
+
+}
+function check_path {
+    if [ ! -d ~/.local/share/fonts ] ; then
+        echo "creating directory ~/.local/share/fonts"
+        mkdir -p ~/.local/share/fonts
+    fi
+}
+function check_font_path {
+    res=$(xset q | grep -A 1 fontpath | grep .local/share/fonts)
+    if [[ "$res" == "" ]]; then
+        xset +fp ~/.local/share/fonts/
+    fi
+    mkfontscale ~/.local/share/fonts/
+    mkfontdir  ~/.local/share/fonts/
+    xset fp rehash
+    echo "The Fontpath is updated!"
+}
+
+function source_code_pro {
+    URL="https://github.com/adobe-fonts/source-code-pro/raw/release/"
+    FPATH=~/.local/share/fonts
+    if [ ! -f "$FPATH/source-code-pro-medium.ttf" ]; then
+        echo -n "downloading source-code-pro ..."
+        curl -fsSL $URL/TTF/SourceCodePro-Bold.ttf --output-dir $FPATH -o source-code-pro-bold.ttf
+        curl -fsSL $URL/TTF/SourceCodePro-Regular.ttf --output-dir $FPATH -o source-code-pro-medium.ttf    
+        curl -fsSL $URL/LICENSE.md --output-dir $FPATH -o source-code-pro-license.txt
+        echo "done!"
+        echo -e "Run:  xfontsel -pattern '*-r-*-m-*' -scaled\nto check your available fonts"
+    fi
+}
+check_apps
+check_path
+source_code_pro
+check_font_path
