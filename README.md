@@ -43,7 +43,8 @@ can be as well installed if the package manager does not support installing them
 
 ## SUPPORT
 
-In case of problems, install suggestions for MacOS with XQuartz or suggestions for supporting other fonts use the [Issues link]() at the Github project page.
+In case of problems, install suggestions for MacOS with XQuartz or suggestions for supporting other
+fonts use the [Issues link](https://github.com/mittelmark/x11-ttf-fonts/issues) at the Github project page.
 
 ## AUTHOR and COPYRIGHT
 
