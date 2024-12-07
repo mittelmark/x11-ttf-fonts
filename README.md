@@ -8,7 +8,12 @@
 ## NAME
 
 __x11-ttf-fonts-install__ - indexes a set of exiting monospaced fonts into ~/.local/share/fonts  
+__x11-ttf-fonts-anonymous-pro__  - downloads and indexes the Anonymous Pro fonts into ~/.local/share/fonts  
+__x11-ttf-fonts-courier-prime__  - downloads and indexes the Courier Prime fonts into ~/.local/share/fonts  
+__x11-ttf-fonts-dejavu-sans-mono__  - downloads and indexes the Dejavu Sans Mono fonts into ~/.local/share/fonts  
+__x11-ttf-fonts-source-code-pro__  - downloads and indexes the Adobe Source Code Pro fonts into ~/.local/share/fonts  
 __x11-ttf-fonts-ubuntu__  - downloads and indexes the Ubuntu Mono fonts into ~/.local/share/fonts  
+
 
 
 ## SYNOPSIS
@@ -17,12 +22,16 @@ Platform Linux with X11 or Cygwin Windows with X11:
 
 ```
 curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-install | sh
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-anonymous-pro | sh
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-courier-prime | sh
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-dejavu-sans-mono | sh
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-source-code-pro | sh
 curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-ubuntu | sh 
 ```
 
 ## DESCRIPTION
 
-Installs or indexes a set of monospaced true type fonts usuable for older X11 applications like the 
+Installs and/or indexes a set of monospaced true type fonts usuable for older X11 applications like the 
 [Jasspa MicroEmacs](https://github.com/bjasspa/jasspa) text editor. TrueType fonts already installed on the current
 machine are linked into `~/.local/share/fonts` using the `x11-ttf-fonts-install` script. Other fonts like:
 
@@ -32,7 +41,8 @@ machine are linked into `~/.local/share/fonts` using the `x11-ttf-fonts-install`
 - [Adobe Source Code Pro](https://github.com/adobe-fonts/source-code-pro/)
 - [Ubuntu Mono](https://fonts.google.com/specimen/Ubuntu+Mono)
 
-can be as well installed if the package manager does not support installing them.
+can be as well installed if the package manager does not support installing them using their own little shell scripts
+as can be seen in the SYNOPSIS section.
 
 ## Requirements
 
