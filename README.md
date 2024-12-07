@@ -16,8 +16,8 @@ __x11-ttf-fonts-ubuntu__  - downloads and indexes the Ubuntu Mono fonts into ~/.
 Platform Linux with X11 or Cygwin Windows with X11:
 
 ```
-/bin/sh -c $(curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-install)
-/bin/sh -c $(curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-ubuntu)
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-install | sh
+curl -fsSL https://github.com/mittelmark/x11-ttf-fonts/releases/latest/download/x11-ttf-fonts-ubuntu | sh 
 ```
 
 ## DESCRIPTION
